@@ -32,14 +32,14 @@ void led_set_kb(uint8_t usb_led) {
     writePinHigh(B4);
   }
   if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
-    writePinLow(B6);
-  } else {
-    writePinHigh(B6);
-  }
-  if (usb_led & (1<<USB_LED_SCROLL_LOCK)) {
     writePinLow(B5);
   } else {
     writePinHigh(B5);
+  }
+  if (usb_led & (1<<USB_LED_SCROLL_LOCK)) {
+    writePinLow(B6);
+  } else {
+    writePinHigh(B6);
   }
 
   led_set_user(usb_led);
